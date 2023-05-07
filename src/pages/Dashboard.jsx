@@ -25,14 +25,27 @@ const Dashboard = () => {
 
   return (
     <section>
-      <h1 className="text-xl font-semibold text-center mb-10">List Data</h1>
-      <div className="ps-36 pb-10">
+      <h1 className="text-4xl font-semibold text-green-700 text-center mb-10">
+        List Data
+      </h1>
+      <div className="px-36 pb-10 flex flex-wrap justify-between">
         <Link
           to={"/add-data"}
-          className="bg-green-500 p-1 rounded-md text-white"
+          className="bg-green-500 p-1 rounded-md text-white items-center flex font-bold"
         >
           Tambah Data
         </Link>
+        <select
+          name="1"
+          id="1"
+          className="p-3 rounded-lg bg-pink-300 cursor-pointer"
+        >
+          <option value="0">Limit Data</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
       </div>
       <div className="container mx-auto px-16 flex flex-wrap justify-center gap-7">
         {users.map((user) => (
@@ -57,6 +70,27 @@ const Dashboard = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="px-36 pb-10 flex flex-wrap justify-between pt-24">
+        <div className="flex flex-wrap gap-1">
+          <input
+            type="text"
+            placeholder="Search"
+            className="p-2 w-56 border border-pink-400 rounded-lg focus:outline-none"
+          />
+          <button className="p-2 rounded-lg bg-pink-400 text-white font-bold">
+            Search
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-5 items-center">
+          <button className="p-2 rounded-lg bg-green-400 text-white font-bold">
+            prev
+          </button>
+          <span className="font-bold">1</span>
+          <button className="p-2 rounded-lg bg-green-400 text-white font-bold">
+            next
+          </button>
+        </div>
       </div>
     </section>
   );
